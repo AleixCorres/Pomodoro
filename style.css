@@ -2,10 +2,7 @@ body{
     margin: 0;
 }
 
-.pomodoro{
-    width: 100%;
-    background-color: aquamarine;
-}
+/* Kanban */
 
 .kanban {
     display: flex;
@@ -62,4 +59,47 @@ body{
 /* Estilos para la descripción de las tarjetas */
 .card-description {
     color: #666666;
+}
+
+.card:hover {
+    background-color: #e0e0e0; /* Cambia de color al pasar el cursor sobre la tarjeta */
+}
+
+.delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff6347; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    display: none; /* Ocultar el botón por defecto */
+}
+
+.card:hover .delete-button {
+    display: block; /* Mostrar el botón al pasar el cursor sobre la tarjeta */
+}
+
+
+
+/* Pomodoro */
+
+.start {
+    border-radius: 50%; /* Hace que el botón sea redondo */
+    width: 100px; /* Puedes ajustar el ancho según tus necesidades */
+    height: 100px; /* Puedes ajustar la altura según tus necesidades */
+    background-color: #3498db; /* Color de fondo del botón */
+    color: white; /* Color del texto dentro del botón */
+    font-size: 16px; /* Tamaño del texto */
+    border: none; /* Elimina el borde del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+
+}
+
+.pomodoro{
+    text-align: center;
+    margin-top: 50px;
 }

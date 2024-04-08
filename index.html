@@ -14,13 +14,35 @@
 </head>
 
 <body>
-    <div class="pomodoro"></div>
+    <div class="pomodoro row">
+        <div class="col">
+            <div class="timer">
+                <button class="start">Start</button>
+            </div>
+        </div>
+        <div class="col">
+            <form id="break-form">
+                <label for="break-time">Break time:</label>
+                <select id="break-time" name="break-time">
+                    <option value="5">5 minutos</option>
+                    <option value="15">15 minutos</option>
+                </select>
+            </form>
+        </div>
+        <audio id="sound" src="audio.mp3" preload="auto"></audio>
+    </div>
     <div class="kanban">
         <div class="toDo">
             <h2>To do</h2>
-            <div class="card" draggable="true" data-id="1">
-                <div class="card-title">Tarea 1</div>
-                <div class="card-description">Descripción de la tarea 1</div>
+            <div class="card" draggable="true" data-id="1" style="background-color: aqua;">
+                <div class="category">Categoría</div>
+                <div class="card-title">
+                    <h2>Tarea 1</h2>
+                </div>
+                <div class="card-description">
+                    <p>Descripción de la tarea 1</p>
+                </div>
+                <button class="delete-button">X</button>
             </div>
         </div>
         <div class="onGoing">
@@ -30,9 +52,12 @@
             <h2>Done</h2>
         </div>
     </div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createNewTask">
-        CREATE NEW TASK
-    </button>
+    <div class="row text-center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createNewTask">
+            CREATE NEW TASK
+        </button>
+    </div>
+    
     <div class="modal fade" id="createNewTask" tabindex="-1" aria-labelledby="createNewTask" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -48,21 +73,26 @@
                         <label for="description">Description:</label><br>
                         <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
 
-                        <label for="date">Date:</label><br>
-                        <input type="date" id="date" name="date" required><br>
-
                         <label for="color">Color:</label><br>
                         <input type="color" id="color" name="color" value="#ff0000"><br><br>
+
+                        <label for="category">Category:</label><br>
+                        <select id="category" name="category">
+                            <option value="design">Design</option>
+                            <option value="front-end">Front-end</option>
+                            <option value="back-end">Back-end</option>
+                        </select><br><br>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary completarBtn">Save changes</button>
+                        <button type="button" class="btn btn-primary completarBtn">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <script src="main.js"></script>
+    <script src="kanban.js" type="module"></script>
+    <!-- <script src="pomodoro.js" type="module"></script> -->
 </body>
 
 </html>
